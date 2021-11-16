@@ -1,1 +1,3 @@
-web: gunicorn Food_management.wsgi
+web: gunicorn Food_management.wsgi:application --log-file - --log-level debug
+heroku ps:scale web=1
+python manage.py migrate
